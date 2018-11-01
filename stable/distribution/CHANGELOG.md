@@ -1,5 +1,17 @@
 # JFrog Distribution Chart Changelog
-All notable changes to this project chart be documented in this file.
+All changes to this project chart be documented in this file.
+
+## [1.1.1] - Oct 17, 2018
+* Add Apache 2.0 license
+
+## [1.1.0] - Oct 14, 2018
+* Upgrade MongoDB version (chart 4.3.10, app 3.6.8-debian-9)
+
+## [1.0.6] - Oct 11, 2018
+* Update Distribution version 1.3.0
+
+## [1.0.5] - Oct 9, 2018
+* Quote ingress hosts to support wildcard names
 
 ## [1.0.4] - Oct 8, 2018
 * Fix distribution to use mongodb credentials secret

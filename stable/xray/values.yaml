@@ -28,6 +28,8 @@ rbac:
 
 ingress:
   enabled: false
+  defaultBackend:
+    enabled: true
   # Used to create an Ingress record.
   hosts:
     - xray.domain.example
@@ -58,6 +60,8 @@ postgresql:
   postgresDatabase: "xraydb"
   postgresUser: "xray"
   postgresPassword:
+  postgresConfig:
+    maxConnections: "500"
   service:
     port: 5432
   persistence:
@@ -115,6 +119,7 @@ mongodb:
 ## ref: https://github.com/kubernetes/charts/blob/master/stable/rabbitmq-ha/README.md
 ##
 rabbitmq-ha:
+  enabled: true
   replicaCount: 1
   rabbitmqUsername: guest
   rabbitmqPassword:
@@ -147,10 +152,27 @@ rabbitmq-ha:
   nodeSelector: {}
   tolerations: []
 
+# RabbitMQ
+## Configuration values for the rabbitmq dependency
+## ref: https://github.com/kubernetes/charts/blob/master/stable/rabbitmq/README.md
+##
+rabbitmq:
+  enabled: false
+  rabbitmqErlangCookie: XRAYRABBITMQCLUSTER
+  rabbitmqMemoryHighWatermark: 500MB
+  rabbitmqNodePort: 5672
+  rabbitmqUsername: user
+  rabbitmqPassword:
+  persistentVolume:
+    enabled: true
+    size: 20Gi
+  rbac:
+    create: true
+
 # Common Xray settings
 common:
   ## Note that by default we use appVersion to get image tag
-  # xrayVersion: 2.3.3
+  # xrayVersion:
   xrayConfigPath: /var/opt/jfrog/xray/data
   xrayUserId: 1035
   xrayGroupId: 1035

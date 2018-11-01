@@ -1,5 +1,27 @@
 # JFrog Xray Chart Changelog
-All notable changes to this chart will be documented in this file.
+All changes to this chart will be documented in this file.
+
+## [0.7.1] - Oct 30, 2018
+* Updated Xray version to 2.4.2
+
+## [0.7.0] - Oct 29, 2018
+* Update postgresql chart to version 0.9.5 to be able and use `postgresConfig` options
+
+## [0.6.3] - Oct 17, 2018
+* Add Apache 2.0 license
+
+## [0.6.2] - Oct 16, 2018
+* Updated Xray version to 2.4.1
+
+## [0.6.1] - Oct 11, 2018
+* Allows ingress default `backend` to be enabled or disabled (defaults to enabled)
+* Allows rabbitmq to be used instead of rabbitmq-ha by settings rabbitmq-ha.enabled: false and rabbitmq.enabled: true
+
+## [0.6.0] - Oct 11, 2018
+* Updated Xray version to 2.4.0
+
+## [0.5.6] - Oct 9, 2018
+* Quote ingress hosts to support wildcard names
 
 ## [0.5.5] - Oct 2, 2018
 * Add `helm repo add jfrog https://charts.jfrog.io` to README
